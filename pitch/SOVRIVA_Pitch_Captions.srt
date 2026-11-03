@@ -1,0 +1,67 @@
+1
+00:00:00,000 --> 00:00:08,000
+Every search, video, and website visit can contribute to how digital platforms understand us.
+
+2
+00:00:08,000 --> 00:00:18,000
+Account exports are fragmented, difficult to compare, and difficult to interpret.
+
+3
+00:00:18,000 --> 00:00:27,000
+Meet SOVRIVA: Your Digital Identity. Your Control.
+
+4
+00:00:27,000 --> 00:00:35,000
+A local-first privacy intelligence platform for individuals, educators, and researchers.
+
+5
+00:00:35,000 --> 00:00:47,000
+The local engine validates supported exports, detects duplicates, and preserves original evidence.
+
+6
+00:00:47,000 --> 00:01:00,000
+Profile Drift compares real snapshots and separates new, retained, supported-removed, and uncertain records.
+
+7
+00:01:00,000 --> 00:01:12,000
+Cross-platform comparison avoids weak matches, and every finding has a source trail.
+
+8
+00:01:12,000 --> 00:01:22,000
+Users can record a privacy action and compare it with a later export.
+
+9
+00:01:22,000 --> 00:01:32,000
+SOVRIVA reports an observed change, no change observed, or not verifiable.
+
+10
+00:01:32,000 --> 00:01:44,000
+The Chrome and Edge extension adds a live protection layer using normalized request metadata.
+
+11
+00:01:44,000 --> 00:01:58,000
+Advertising blocking and tracker protection remain independent across three protection modes.
+
+12
+00:01:58,000 --> 00:02:08,000
+SOVRIVA is built with FastAPI, SQLite, and Manifest V3.
+
+13
+00:02:08,000 --> 00:02:18,000
+The current classifier is deterministic and explainable by design.
+
+14
+00:02:18,000 --> 00:02:28,000
+The next step is an optional local model evaluated with precision, recall, and macro-F1.
+
+15
+00:02:28,000 --> 00:02:38,000
+SOVRIVA can support individuals, universities, educators, researchers, and institutions.
+
+16
+00:02:38,000 --> 00:02:48,000
+A free local core can grow into advanced reporting without selling personal data.
+
+17
+00:02:48,000 --> 00:02:55,000
+SOVRIVA. Your Digital Identity. Your Control.
