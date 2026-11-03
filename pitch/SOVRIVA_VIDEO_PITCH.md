@@ -26,83 +26,43 @@ This is a hybrid pitch: short PPT-style visual cards establish the story, while 
 
 ## Final narration script
 
-### 00:00–00:18 — Opening
-
 Every search, video, and website visit can contribute to how digital platforms understand us.
 
-But when people download their account data, it is often fragmented, difficult to compare, and difficult to interpret.
+But when people download their account data, it is fragmented, difficult to compare, and difficult to interpret.
 
-When a record disappears from a later export, that does not automatically mean it was deleted.
-
-People need evidence—not assumptions.
-
-### 00:18–00:35 — Solution
+When a record disappears from a later export, that does not automatically mean it was deleted. People need evidence, not assumptions.
 
 Meet SOVRIVA: Your Digital Identity. Your Control.
 
-SOVRIVA is a local-first privacy intelligence platform for privacy-conscious individuals, educators, and researchers.
+SOVRIVA is a local-first privacy intelligence platform for individuals, educators, and researchers.
 
-Users import their own supported Google or Meta exports, and the analysis stays on their computer.
+Users import supported Google or Meta exports, and the analysis stays on their computer. The local engine validates the archive, detects duplicate imports, and preserves the original evidence.
 
-### 00:35–01:12 — Product intelligence
+Profile Drift compares real snapshots and separates new, retained, removed with supporting evidence, and uncertain records. Cross-platform comparison avoids weak matches, and every finding can be traced to its platform, source file, and record path.
 
-The local engine validates the archive, detects duplicate imports, and preserves the original evidence.
-
-Profile Drift compares real snapshots and separates new, retained, removed with supporting evidence, and uncertain records.
-
-Cross-platform comparison connects related records without forcing weak matches.
-
-And every finding can be traced back to its platform, source file, and record path.
-
-This makes privacy analysis understandable, explainable, and auditable.
-
-### 01:12–01:32 — Privacy verification
-
-Users can also record a privacy action—such as changing an advertising preference—and compare it with a later export.
-
-SOVRIVA reports an observed change, no change observed, or not verifiable.
+Users can record a privacy action, such as changing an advertising preference, and compare it with a later export. SOVRIVA reports an observed change, no change observed, or not verifiable.
 
 It does not claim to see a platform’s complete internal profile, and it never treats incomplete data as proof of deletion.
 
-### 01:32–01:58 — Browser extension
+The companion Chrome and Edge extension adds a live protection layer. It observes only normalized request metadata and applies supported advertising and tracker rules through Manifest V3.
 
-The companion Chrome and Edge extension adds a live protection layer.
+Advertising blocking and tracker protection remain independent across Interest, Balanced, and Privacy modes. Passwords, cookies, request bodies, and page text never enter SOVRIVA.
 
-It observes only normalized request metadata and applies supported advertising and tracker rules through Manifest V3.
-
-Advertising blocking and tracker protection remain independent, with Interest, Balanced, and Privacy modes.
-
-The dashboard can then show the locally received observations without collecting passwords, cookies, request bodies, or page text.
-
-### 01:58–02:18 — Technology and AI
-
-SOVRIVA is built with FastAPI, SQLite, and a Chrome and Edge Manifest V3 extension.
-
-The current classifier is deterministic and explainable by design, so its results are reproducible.
+The system is built with FastAPI, SQLite, and a browser extension. Its current classifier is deterministic and explainable, so its results are reproducible.
 
 Our next step is to evaluate an optional local language model on labelled data using precision, recall, and macro-F1, while keeping human review when confidence is low.
 
-AI should clarify evidence—not invent it.
+AI should clarify evidence, not invent it.
 
-### 02:18–02:38 — Market and impact
+SOVRIVA can support individuals, universities, educators, researchers, and future institutional privacy-audit programs.
 
-SOVRIVA can support individuals, universities, digital-rights educators, privacy researchers, and future institutional privacy-audit programs.
+The proposed model combines a free local core with paid advanced reporting and institutional deployment, without selling personal data.
 
-The proposed model combines a free local core with paid advanced reporting and institutional deployment—without selling personal data.
+Our working prototype already includes imports, provenance, Profile Drift, privacy-action verification, browser protection, and secure pairing.
 
-The impact is simple: people gain visibility into their digital identity and more confidence when making privacy decisions.
+SOVRIVA does not claim to reveal everything a platform knows. It helps people understand the evidence they can access, compare what changes, and control what happens next.
 
-### 02:38–02:55 — Closing
-
-Our working prototype already includes local imports, evidence provenance, Profile Drift, privacy-action verification, browser protection, and secure extension pairing.
-
-SOVRIVA does not claim to reveal everything a platform knows.
-
-It helps people understand the evidence they can access, compare what changes, and control what happens next.
-
-SOVRIVA.
-
-Your Digital Identity. Your Control.
+SOVRIVA. Your Digital Identity. Your Control.
 
 ## On-screen text cards
 

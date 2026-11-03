@@ -10,8 +10,8 @@ if (!(Test-Path $draft)) { throw "Visual draft not found: $draft" }
 if (!(Test-Path $VoiceFile)) { throw "Voice recording not found: $VoiceFile" }
 
 ffmpeg -y -i $draft -i $VoiceFile `
-  -filter_complex "[1:a]loudnorm=I=-16:LRA=7:TP=-1.5,apad[voice]" `
+  -filter_complex "[1:a]loudnorm=I=-16:LRA=7:TP=-1.5,aresample=48000,apad[voice]" `
   -map 0:v:0 -map "[voice]" -t 163 `
-  -c:v copy -c:a aac -b:a 160k -shortest $Output
+  -c:v copy -c:a aac -ar 48000 -ac 2 -b:a 160k -shortest $Output
 
 Write-Host "Created $Output"

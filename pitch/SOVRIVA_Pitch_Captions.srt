@@ -4,7 +4,7 @@ Every search, video, and website visit can contribute to how digital platforms u
 
 2
 00:00:08,000 --> 00:00:18,000
-Account exports are fragmented, difficult to compare, and difficult to interpret.
+Account data is fragmented, difficult to compare, and difficult to interpret. People need evidence, not assumptions.
 
 3
 00:00:18,000 --> 00:00:27,000
@@ -12,56 +12,40 @@ Meet SOVRIVA: Your Digital Identity. Your Control.
 
 4
 00:00:27,000 --> 00:00:35,000
-A local-first privacy intelligence platform for individuals, educators, and researchers.
+SOVRIVA is a local-first privacy intelligence platform for individuals, educators, and researchers.
 
 5
 00:00:35,000 --> 00:00:47,000
-The local engine validates supported exports, detects duplicates, and preserves original evidence.
+Users import supported Google or Meta exports, and the analysis stays on their computer.
 
 6
-00:00:47,000 --> 00:01:00,000
-Profile Drift compares real snapshots and separates new, retained, supported-removed, and uncertain records.
+00:00:47,000 --> 00:00:59,000
+The local engine validates archives, detects duplicates, and preserves the original evidence.
 
 7
-00:01:00,000 --> 00:01:12,000
-Cross-platform comparison avoids weak matches, and every finding has a source trail.
+00:00:59,000 --> 00:01:12,000
+Profile Drift separates new, retained, removed with supporting evidence, and uncertain records.
 
 8
 00:01:12,000 --> 00:01:22,000
-Users can record a privacy action and compare it with a later export.
+Cross-platform comparison avoids weak matches, and every finding has a source trail.
 
 9
-00:01:22,000 --> 00:01:32,000
-SOVRIVA reports an observed change, no change observed, or not verifiable.
+00:01:22,000 --> 00:01:40,000
+Users can record a privacy action and compare it with a later export. SOVRIVA reports an observed change, no change observed, or not verifiable.
 
 10
-00:01:32,000 --> 00:01:44,000
-The Chrome and Edge extension adds a live protection layer using normalized request metadata.
+00:01:40,000 --> 00:01:59,000
+The Chrome and Edge extension adds protection using normalized metadata and Manifest V3 rules. Ad blocking and tracker protection remain independent across three modes.
 
 11
-00:01:44,000 --> 00:01:58,000
-Advertising blocking and tracker protection remain independent across three protection modes.
+00:01:59,000 --> 00:02:20,000
+FastAPI, SQLite, and explainable classification make the system local and reproducible. The next step is an optional local model evaluated with precision, recall, and macro-F1.
 
 12
-00:01:58,000 --> 00:02:08,000
-SOVRIVA is built with FastAPI, SQLite, and Manifest V3.
+00:02:20,000 --> 00:02:31,000
+SOVRIVA can support individuals, universities, educators, researchers, and institutions without selling personal data.
 
 13
-00:02:08,000 --> 00:02:18,000
-The current classifier is deterministic and explainable by design.
-
-14
-00:02:18,000 --> 00:02:28,000
-The next step is an optional local model evaluated with precision, recall, and macro-F1.
-
-15
-00:02:28,000 --> 00:02:38,000
-SOVRIVA can support individuals, universities, educators, researchers, and institutions.
-
-16
-00:02:38,000 --> 00:02:48,000
-A free local core can grow into advanced reporting without selling personal data.
-
-17
-00:02:48,000 --> 00:02:55,000
-SOVRIVA. Your Digital Identity. Your Control.
+00:02:31,000 --> 00:02:43,000
+Our working prototype helps people understand evidence, compare change, and control what happens next. SOVRIVA. Your Digital Identity. Your Control.
