@@ -11,6 +11,7 @@ SOVRIVA is a local-first privacy intelligence workspace for understanding export
 - **Tauri v2 Windows scaffold:** `src-tauri/` and `scripts/build-windows.ps1`; the packaged backend is produced at `dist/sovriva-backend.exe`.
 - **Controlled privacy fixture:** `python scripts/lab_server.py`.
 - **Extension package:** generated at `release/SOVRIVA_Extension.zip` by `pwsh -File scripts/package-extension.ps1`.
+- **Video pitch package:** `pitch/SOVRIVA_VIDEO_PITCH.md` and `pitch/RECORDING_AND_EDITING_CHECKLIST.md`.
 
 ## What works locally
 
