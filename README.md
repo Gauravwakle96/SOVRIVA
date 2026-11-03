@@ -12,6 +12,7 @@ SOVRIVA is a local-first privacy intelligence workspace for understanding export
 - **Controlled privacy fixture:** `python scripts/lab_server.py`.
 - **Extension package:** generated at `release/SOVRIVA_Extension.zip` by `pwsh -File scripts/package-extension.ps1`.
 - **Video pitch package:** `pitch/SOVRIVA_VIDEO_PITCH.md` and `pitch/RECORDING_AND_EDITING_CHECKLIST.md`.
+- **InnovateX pitch video:** `pitch/SOVRIVA_InnovateX_Pitch_Final.mp4`, built from the supplied pitch structure with real product footage.
 
 ## What works locally
 

@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:14,000
+The gap is not access. It is making exported evidence understandable, comparable and verifiable.
+
+2
+00:00:14,000 --> 00:00:25,000
+People need a trustworthy history—not assumptions about missing records.
+
+3
+00:00:25,000 --> 00:00:35,000
+SOVRIVA is a local-first Digital Identity Intelligence and Privacy Verification Platform.
+
+4
+00:00:35,000 --> 00:00:45,000
+Supported exports become understandable insights while original evidence stays preserved locally.
+
+5
+00:00:45,000 --> 00:00:57,000
+Profile Drift checks coverage before deciding what changed.
+
+6
+00:00:57,000 --> 00:01:10,000
+It distinguishes newly reported, retained, supported-removed and uncertain-absence records.
+
+7
+00:01:10,000 --> 00:01:20,000
+Evidence Provenance traces each finding to its platform, source file and specific record.
+
+8
+00:01:20,000 --> 00:01:30,000
+Privacy Action Verification compares a recorded action with a later export.
+
+9
+00:01:30,000 --> 00:01:45,000
+The result is an observed change, no change observed, or not verifiable—not a claim about private platform systems.
+
+10
+00:01:45,000 --> 00:02:00,000
+The Chrome and Edge companion observes request metadata and applies supported advertising and tracker rules.
+
+11
+00:02:00,000 --> 00:02:15,000
+FastAPI, SQLite, Manifest V3, and explainable deterministic algorithms form the current foundation.
+
+12
+00:02:15,000 --> 00:02:20,000
+Local AI and machine learning are planned for future evaluation—not presented as shipped results.
+
+13
+00:02:20,000 --> 00:02:30,000
+Target users include privacy-conscious individuals, students, educators and digital privacy researchers.
+
+14
+00:02:30,000 --> 00:02:40,000
+A free local core can grow into premium analytical reports and institutional solutions.
+
+15
+00:02:40,000 --> 00:02:52,000
+SOVRIVA helps people understand their digital advertising identity, trace evidence and verify observable changes.
+
+16
+00:02:52,000 --> 00:02:55,000
+Your Digital Identity. Your Control.

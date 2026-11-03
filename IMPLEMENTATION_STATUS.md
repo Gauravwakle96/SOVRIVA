@@ -21,6 +21,7 @@ Updated: 2026-11-03
 - Downloadable Markdown profile reports and safe legacy Google HTML activity extraction.
 - Extension allowlist and custom-domain policy controls with input normalization.
 - Fast interaction path: dashboard paints from primary data first, and extension policy sync is debounced and skips unchanged DNR policies.
+- Presentation-ready dashboard layer: animated import surface, evidence-led architecture pipeline, presentation mode with `P` shortcut, reduced-motion support, and restrained page-entry/hover motion.
 
 ## IMPLEMENTED_NOT_FULLY_TESTED
 

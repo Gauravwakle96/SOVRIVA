@@ -91,6 +91,23 @@ function metric(labelText, value, foot) { return `<div class="metric-card"><div 
 
 function emptyState(title, body, action = "") { return `<div class="empty-state"><div class="empty-icon">⌁</div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(body)}</p>${action}</div>`; }
 
+function architecturePanel() {
+  const settings = state.dashboard?.settings || { mode: "BALANCED" };
+  const stages = [
+    ["01", "Import", "Supported ZIP", "blue"],
+    ["02", "Normalize", "Original labels", "violet"],
+    ["03", "Intelligence", "Drift + matching", "blue"],
+    ["04", "Evidence", "Source provenance", "green"],
+    ["05", "Verify", "Observable outcome", "orange"],
+    ["06", "Dashboard", settings.mode + " mode", "navy"],
+  ];
+  return `<section class="panel architecture-panel"><div class="panel-header"><div><div class="panel-title">Evidence-led architecture</div><div class="panel-subtitle">A local workflow from user-authorized data to an inspectable conclusion.</div></div><span class="pill pill-green">LOCAL-FIRST</span></div><div class="architecture-track">${stages.map(([number, title, detail, tone], index) => `<div class="architecture-stage tone-${tone}"><span>${number}</span><strong>${title}</strong><small>${detail}</small></div>${index < stages.length - 1 ? "<i class=\"architecture-arrow\">→</i>" : ""}`).join("")}</div><div class="architecture-foot"><span><b>FastAPI</b> loopback service</span><span><b>SQLite</b> evidence store</span><span><b>MV3</b> browser companion</span><span class="planned"><b>AI</b> planned, not benchmarked</span></div></section>`;
+}
+
+function importSurface() {
+  return `<section class="import-surface" id="import-dropzone" tabindex="0" aria-label="Import a supported ZIP archive"><div class="import-orbit"><span></span><span></span><span></span></div><div><div class="import-kicker">LOCAL IMPORT WORKSPACE</div><strong>Bring your evidence. Keep your control.</strong><p>Drop a supported Google or Meta ZIP here, or choose an archive to validate locally.</p></div><button class="btn btn-primary" data-action="import-any">Choose ZIP archive</button></section>`;
+}
+
 function overviewView() {
   const dashboard = state.dashboard || { metrics: {}, categories: [], interests: [], observations: [], settings: { mode: "BALANCED" } };
   const metrics = dashboard.metrics || {};
@@ -99,7 +116,7 @@ function overviewView() {
   const observations = dashboard.observations || [];
   const maxCategory = Math.max(1, ...categories.map((item) => item.count));
   const bars = Array.from({ length: 8 }, (_, index) => categories[index] || { category: "", count: 0 });
-  return `${pageHead()}
+  return `${pageHead()}${importSurface()}
     <div class="metric-grid">
       ${metric("Imported interests", metrics.interests, metrics.interests ? "From stored source records" : "Nothing imported yet")}
       ${metric("Observed requests", metrics.observed_requests, metrics.observed_requests ? "Extension metadata" : "Extension not connected")}
@@ -115,7 +132,7 @@ function overviewView() {
         <div class="signal-note">${escapeHtml(dashboard.data_notice || "Local records only. Nothing is estimated.")}</div>
       </section>
     </div>
-    <div class="bottom-grid"><section class="panel"><div class="panel-header"><div><div class="panel-title">Recent profile records</div><div class="panel-subtitle">Platform labels remain unchanged</div></div><button class="panel-link" data-view="dna">View all →</button></div>${interests.length ? interestTable(interests.slice(0, 6)) : emptyState("Your profile starts with your exports", "SOVRIVA will preserve the original label, source file, and record path for every supported interest.")}</section>
+    ${architecturePanel()}<div class="bottom-grid"><section class="panel"><div class="panel-header"><div><div class="panel-title">Recent profile records</div><div class="panel-subtitle">Platform labels remain unchanged</div></div><button class="panel-link" data-view="dna">View all →</button></div>${interests.length ? interestTable(interests.slice(0, 6)) : emptyState("Your profile starts with your exports", "SOVRIVA will preserve the original label, source file, and record path for every supported interest.")}</section>
       <section class="panel"><div class="panel-header"><div><div class="panel-title">Live activity</div><div class="panel-subtitle">Normalized metadata from the extension</div></div><button class="panel-link" data-view="monitor">Monitor →</button></div>${observations.length ? observationTable(observations.slice(0, 5)) : emptyState("No browser observations", "Pair the extension to see real request metadata. SOVRIVA does not generate activity for an empty workspace.", `<button class="btn" data-view="monitor">Pair extension</button>`)}</section></div>`;
 }
 
@@ -207,6 +224,10 @@ function render() {
 
 async function importFile(file, platform = null, isDemo = false) {
   if (!file) return;
+  const dropzone = document.querySelector("#import-dropzone");
+  dropzone?.classList.add("is-loading");
+  const button = dropzone?.querySelector("button");
+  if (button) { button.disabled = true; button.textContent = "Validating locally…"; }
   const reader = new FileReader();
   reader.onload = async () => {
     try {
@@ -214,6 +235,7 @@ async function importFile(file, platform = null, isDemo = false) {
       await api("/api/import", { method: "POST", body: JSON.stringify({ filename: file.name, platform, is_demo: isDemo, content_base64: base64 }) });
       toast(`${file.name} imported locally`); await refresh();
     } catch (error) { toast(error.message, true); }
+    finally { dropzone?.classList.remove("is-loading"); if (button) { button.disabled = false; button.textContent = "Choose ZIP archive"; } }
   };
   reader.readAsDataURL(file);
 }
@@ -295,6 +317,21 @@ function bindViewControls() {
   document.querySelector("#interest-platform")?.addEventListener("change", filterDna);
   document.querySelector("#interest-category")?.addEventListener("change", filterDna);
   document.querySelector("#ad-screenshot")?.addEventListener("change", (event) => runOcr(event.target.files[0]));
+  const dropzone = document.querySelector("#import-dropzone");
+  if (dropzone) {
+    dropzone.addEventListener("dragover", (event) => { event.preventDefault(); dropzone.classList.add("is-dragging"); });
+    dropzone.addEventListener("dragleave", () => dropzone.classList.remove("is-dragging"));
+    dropzone.addEventListener("drop", (event) => { event.preventDefault(); dropzone.classList.remove("is-dragging"); importFile(event.dataTransfer.files[0]); });
+    dropzone.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); triggerFilePicker(); } });
+  }
+}
+
+function setPresentationMode(enabled) {
+  document.body.classList.toggle("presentation-mode", enabled);
+  const button = document.querySelector("#present-button");
+  if (button) button.textContent = enabled ? "× Exit presentation" : "▶ Present";
+  if (enabled && document.documentElement.requestFullscreen && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+  if (!enabled && document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {});
 }
 
 function filterDna() {
@@ -303,4 +340,10 @@ function filterDna() {
   document.querySelector("#dna-table").innerHTML = interestTable(results);
 }
 
-document.addEventListener("DOMContentLoaded", async () => { document.querySelector("#refresh-button").addEventListener("click", refresh); await refresh(); });
+document.addEventListener("DOMContentLoaded", async () => {
+  document.querySelector("#refresh-button").addEventListener("click", refresh);
+  document.querySelector("#present-button").addEventListener("click", () => setPresentationMode(!document.body.classList.contains("presentation-mode")));
+  document.addEventListener("keydown", (event) => { if (event.key.toLowerCase() === "p" && !/input|textarea|select/i.test(event.target.tagName)) setPresentationMode(!document.body.classList.contains("presentation-mode")); if (event.key === "Escape") setPresentationMode(false); });
+  document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement) setPresentationMode(false); });
+  await refresh();
+});
