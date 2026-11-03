@@ -1,0 +1,13 @@
+{
+  "name": "sovriva",
+  "private": true,
+  "version": "0.1.0",
+  "description": "SOVRIVA local-first privacy intelligence desktop application",
+  "scripts": {
+    "tauri": "tauri",
+    "tauri:build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}

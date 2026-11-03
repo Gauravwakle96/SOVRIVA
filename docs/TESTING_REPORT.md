@@ -1,0 +1,3 @@
+# Testing report
+
+The current reproducible checks are listed in `docs/TESTING.md`. The latest run passed the standard-library core suite (8 tests), Python compilation, JavaScript syntax checks, extension packaging, source release verification, API health, demo seeding, pairing, authenticated observation ingestion, deletion smoke checks, and the packaged PyInstaller backend `/api/health` smoke test. Local endpoint measurements were below 0.2 seconds, with pairing start/claim below 0.1 seconds. The dashboard now paints before secondary panel queries finish; extension policy updates are debounced and unchanged rule sets are not rewritten. Live Chrome/Edge and Tauri installer tests remain environment-dependent and are marked in `IMPLEMENTATION_STATUS.md`.

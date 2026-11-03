@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SOVRIVA",
+  "version": "0.1.0",
+  "identifier": "ai.sovriva.desktop",
+  "build": {
+    "frontendDist": "../frontend",
+    "devUrl": "http://127.0.0.1:8765",
+    "beforeDevCommand": "python ../run.py",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "SOVRIVA — Your digital identity. Your control.",
+        "width": 1440,
+        "height": 920,
+        "minWidth": 1024,
+        "minHeight": 700,
+        "resizable": true
+      }
+    ],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "shortDescription": "Local-first privacy intelligence",
+    "longDescription": "SOVRIVA audits advertising identity and protects browser activity locally.",
+    "externalBin": ["binaries/sovriva-backend"],
+    "windows": { "webviewInstallMode": { "type": "downloadBootstrapper" } }
+  }
+}

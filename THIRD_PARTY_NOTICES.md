@@ -1,0 +1,1 @@
+See [`docs/THIRD_PARTY_NOTICES.md`](docs/THIRD_PARTY_NOTICES.md). The only development runtime dependency referenced by the dashboard is Tesseract.js under Apache-2.0; it should be bundled and pinned before offline distribution.

@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "SOVRIVA — Local Privacy Intelligence",
+  "version": "0.1.0",
+  "description": "Local browser request observation with independent advertisement and tracker protection.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms",
+    "webRequest",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": ["<all_urls>", "http://127.0.0.1:8765/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "SOVRIVA protection",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "base_rules", "enabled": false, "path": "rules/base_rules.json" }
+    ]
+  },
+  "minimum_chrome_version": "120"
+}

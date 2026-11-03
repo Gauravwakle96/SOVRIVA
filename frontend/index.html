@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07152f" />
+    <title>SOVRIVA — Your digital identity. Your control.</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div id="toast-region" class="toast-region" aria-live="polite"></div>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="SOVRIVA navigation">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div><strong>SOVRIVA</strong><small>IDENTITY INTELLIGENCE</small></div>
+        </div>
+        <div class="local-badge"><i></i><span>LOCAL-FIRST ACTIVE</span></div>
+        <nav id="primary-nav" class="nav-groups">
+          <p class="nav-label">INTELLIGENCE</p>
+          <button class="nav-item active" data-view="overview"><span class="nav-icon">⌂</span>Overview</button>
+          <button class="nav-item" data-view="dna"><span class="nav-icon">◈</span>Advertising Profile DNA</button>
+          <button class="nav-item" data-view="drift"><span class="nav-icon">↗</span>Profile Drift</button>
+          <button class="nav-item" data-view="comparison"><span class="nav-icon">⇄</span>Cross-Platform Compare</button>
+          <button class="nav-item" data-view="misprofiling"><span class="nav-icon">⊘</span>Misprofiling Detector</button>
+          <button class="nav-item" data-view="evidence"><span class="nav-icon">⌁</span>Evidence Provenance</button>
+          <button class="nav-item" data-view="actions"><span class="nav-icon">✓</span>Privacy Action Verifier</button>
+          <button class="nav-item" data-view="sync"><span class="nav-icon">⇆</span>Automatic Sync</button>
+          <p class="nav-label protection-label">PROTECTION</p>
+          <button class="nav-item" data-view="monitor"><span class="nav-icon">◉</span>Live Browser Monitor</button>
+          <button class="nav-item" data-view="blocking"><span class="nav-icon">▣</span>Ad Blocking</button>
+          <button class="nav-item" data-view="tracking"><span class="nav-icon">◌</span>Tracker Protection</button>
+          <button class="nav-item" data-view="footprint"><span class="nav-icon">⌘</span>Digital Footprint</button>
+          <p class="nav-label lab-label">LAB</p>
+          <button class="nav-item" data-view="why-ad"><span class="nav-icon">?</span>Why This Ad?</button>
+          <button class="nav-item" data-view="experiment"><span class="nav-icon">✦</span>Privacy Experiment Lab</button>
+          <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>Settings</button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="privacy-mini"><span class="lock-icon">⌑</span><div><strong>Your data stays here.</strong><small>No accounts. No telemetry.</small></div></div>
+          <button id="delete-all-button" class="text-button danger-text" data-action="delete-all">Delete all local data</button>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>SOVRIVA</span><b>/</b><strong id="page-breadcrumb">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="sync-note"><i></i> Local workspace</span>
+            <button class="icon-button" id="refresh-button" title="Refresh local data">↻</button>
+            <div class="avatar">G</div>
+          </div>
+        </header>
+        <div id="app-content" class="content-area"></div>
+      </main>
+    </div>
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>
